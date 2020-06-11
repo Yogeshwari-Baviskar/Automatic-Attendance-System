@@ -12,7 +12,7 @@ from datetime import date
 import csv
 import re
 
-app = Flask(__name__,static_folder="static11")
+app = Flask(__name__,static_folder="static")
 
 # Change this to your secret key (can be anything, it's for extra protection)
 app.secret_key = 'thisismysecretkey'
