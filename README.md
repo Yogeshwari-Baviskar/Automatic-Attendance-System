@@ -5,7 +5,7 @@ The project is developed using python 3.8
 Web application :Flask Library in Python(Flask is Ligthweight web frame and suitable for small web applications)      
 Database using : MySql
 
-static folder conatis all css files and temp folder contains all html files.
+static folder conatis all css files and templates folder contains all html files.
   		
 1.app.py : Applicatons root file.  
       
