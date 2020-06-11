@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ </head>
+ <body >
+ <h2>Attendance System </h2>
+  <div class="login-box" >
+   <h1>Login</h1>
+   <form class="form-group" action="{{ url_for('login') }}" method="post">
+    <div class="textbox">
+     <i class="fas fa-user"></i>
+     <label>Username</label>
+     <input type="text" name="username" placeholder="Username"id="username" required>
+    </div>
+
+    <div class="textbox">
+     <i class="fa fa-lock fa-lg"></i>
+     <label>Password</label>
+     <input type="password" name="password" placeholder="Password"id="password" required>
+    </div>
+    <input type="checkbox" value="checked"><b>Remember</b>
+    <input type="submit" value="Login" class="form-control btn btn-success " name="">
+   </form>
+   <div id="msg">{{ msg }}</div>
+   <p>Don't have an account? <a href="{{ url_for('register') }}">SignUp</a></p>
+  </div>
+ </body>
+</html>

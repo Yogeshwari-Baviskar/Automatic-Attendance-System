@@ -1,0 +1,67 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='stud.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">   Automatic Attendance System </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href= "{{ url_for('profile',prof='profile')}}">Profile</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="{{ url_for('home') }}">Home </a></li>
+            <li class="active"><a href="{{ url_for('addCourse') }}">Add Courses<span class="sr-only">(current)</span></a></li>
+            <li><a href="{{url_for('addStudent')}}">Add Student</a></li>
+            <li><a href="{{url_for('removeStudent')}}">Remove Student</a></li>
+            <li><a href="{{url_for('removeCourse')}}">Remove Course</a></li>
+            <li><a href="{{url_for('attendance')}}">Mark Attendance</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="login-box" >
+        <h1>Add Course deatils</h1>
+        <form class="form-group" action="{{ url_for('addCourse') }}" method="post">
+            <div class="textbox">
+                <i class="fas fa-address-card"></i>
+                <label>Course ID</label>
+                <input type="text" name="course_id" placeholder="Course ID"id="course_id" required>
+            </div>
+
+            <div class="textbox">
+                <i class="fas fa-book"></i>
+                <label>Course name</label>
+                <input type="text" name="course_name" placeholder="Course Name"id="course_name" required>
+            </div>
+            <div id="msg">{{ msg }}</div>
+
+            <input type="submit" value="Add" class="form-control btn btn-success " name="">
+
+        </form>
+
+    </div>
+{% endblock %}
